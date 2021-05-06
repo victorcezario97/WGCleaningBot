@@ -13,15 +13,24 @@ public class DataHandler {
 	
 	private List<String> people;
 	private List<String> tasks;
-	
+	private ArrayList<Reminder> reminders;
+
 	public List<String> getPeople() { return people; }
 	public List<String> getTasks() { return tasks; }
+	public ArrayList<Reminder> getReminders() { return reminders; }
 	
 	public DataHandler() {	
 		File data = new File("src/main/resources/data.txt");
+		reminders = new ArrayList<Reminder>();
 
 		try {
 			Scanner scn = new Scanner(data);
+			String schedule = scn.nextLine();
+			
+			for(String reminder:schedule.split(";")) {
+				reminders.add(new Reminder(reminder.split(",")[0], Integer.valueOf(reminder.split(",")[1])));
+			}
+			
 			people = new ArrayList<String>(Arrays.asList(scn.nextLine().split(";")));
 			tasks = new ArrayList<String>(Arrays.asList(scn.nextLine().split(";")));
 			scn.close();
