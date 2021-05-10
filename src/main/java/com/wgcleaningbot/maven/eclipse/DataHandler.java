@@ -12,11 +12,11 @@ import java.util.Scanner;
 public class DataHandler {
 	
 	private List<String> people;
-	private List<String> tasks;
+	private List<Task> tasks;
 	private ArrayList<Reminder> reminders;
 
 	public List<String> getPeople() { return people; }
-	public List<String> getTasks() { return tasks; }
+	public List<Task> getTasks() { return tasks; }
 	public ArrayList<Reminder> getReminders() { return reminders; }
 	
 	public DataHandler() {	
@@ -32,7 +32,10 @@ public class DataHandler {
 			}
 			
 			people = new ArrayList<String>(Arrays.asList(scn.nextLine().split(";")));
-			tasks = new ArrayList<String>(Arrays.asList(scn.nextLine().split(";")));
+			tasks = new ArrayList<Task>();
+			for(String newTask:scn.nextLine().split(";")) {
+				tasks.add(new Task(newTask));
+			}
 			scn.close();
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
@@ -53,8 +56,9 @@ public class DataHandler {
 			tasks.add(tasks.get(0));
 			tasks.remove(0);
 
-			for(String task:tasks) {
-				fw.write(task+";");
+			for(Task task:tasks) {
+				task.rotateSubtasks();
+				fw.write(task.toString()+";");
 			}
 			fw.close();
 		} catch (IOException e) {

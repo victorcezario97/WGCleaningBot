@@ -16,7 +16,7 @@ import com.pengrad.telegrambot.response.SendResponse;
 public class Main {
 
 	public static void main(String[] args) {
-	TelegramBot bot = new TelegramBot("1602613525:AAH3HHjhREKiSP1wwex2rCDOkhPh58IGKyE");
+	TelegramBot bot = new TelegramBot("");
 	final long groupId = -568869104;
 	DataHandler dh = new DataHandler();		
 	
@@ -30,7 +30,7 @@ public class Main {
 		        	SendResponse sendResponse = bot.execute(request);
 		        	//boolean ok = sendResponse.isOk();
 		        	//Message message = sendResponse.message();
-		        	//dh.update();
+		        	dh.update();
 	        	} catch(Exception e) {
 	        		System.out.println(e.getMessage());
 	        	}
