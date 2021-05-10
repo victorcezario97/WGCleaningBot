@@ -20,4 +20,8 @@ public class Reminder {
 	public void setHourOfMessage(int hourOfMessage) {
 		this.hourOfMessage = hourOfMessage;
 	}
+	
+	public String toString() {
+		return dayOfMessage + ',' + String.valueOf(hourOfMessage);
+	}
 }

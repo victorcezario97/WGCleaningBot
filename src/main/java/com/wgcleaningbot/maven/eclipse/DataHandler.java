@@ -48,6 +48,12 @@ public class DataHandler {
 
 		try {
 			FileWriter fw = new FileWriter(data);
+			
+			for(Reminder reminder:reminders) {
+				fw.write(reminder.toString()+';');
+			}
+			fw.write('\n');
+			
 			for(String person:people) {
 				fw.write(person+";");
 			}
@@ -58,7 +64,7 @@ public class DataHandler {
 
 			for(Task task:tasks) {
 				task.rotateSubtasks();
-				fw.write(task.toString()+";");
+				fw.write(task.toString(true)+";");
 			}
 			fw.close();
 		} catch (IOException e) {
@@ -71,9 +77,10 @@ public class DataHandler {
 	public String buildMessage() {
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append("This week's tasks:\n");
+		sb.append("**This week's tasks:**\n");
 		for(int i=0; i<people.size(); i++) {
-			sb.append(people.get(i) + ": " + tasks.get(i)+'\n');
+			System.out.println(tasks.get(i).getName());
+			sb.append(people.get(i) + ": " + tasks.get(i).toString(false)+'\n');
 		}
 		
 		return sb.toString();

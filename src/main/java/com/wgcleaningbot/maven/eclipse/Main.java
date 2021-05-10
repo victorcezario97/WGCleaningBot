@@ -8,7 +8,6 @@ import java.util.concurrent.TimeUnit;
 
 import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.UpdatesListener;
-import com.pengrad.telegrambot.model.Message;
 import com.pengrad.telegrambot.model.Update;
 import com.pengrad.telegrambot.request.SendMessage;
 import com.pengrad.telegrambot.response.SendResponse;
@@ -17,7 +16,7 @@ public class Main {
 
 	public static void main(String[] args) {
 	TelegramBot bot = new TelegramBot("");
-	final long groupId = -568869104;
+	final long groupId = 0;
 	DataHandler dh = new DataHandler();		
 	
 	bot.setUpdatesListener(new UpdatesListener() {

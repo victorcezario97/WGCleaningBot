@@ -1,2 +1,3 @@
+THURSDAY,14;
 Lea;Louisa;Aycke;Sophie;Olawale;Arvind;Victor;
-Kitchen(Oven,Microwave and kettle,Dishwasher,Little oven and other devices,Fridge left,Fridge right,);Toilet;Laundry/Shopping;Showers;Free;Floor/Plants;Recycling/Garbage;
+Floor/Plants;Recycling/Garbage;Kitchen(Fridge right,Oven,Microwave and kettle,Dishwasher,Little oven and other devices,Fridge left,);Toilet;Laundry/Shopping;Showers;Free;
