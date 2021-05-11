@@ -77,13 +77,16 @@ public class DataHandler {
 	public String buildMessage() {
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append("**This week's tasks:**\n");
+		sb.append("*This week's tasks:*\n");
 		for(int i=0; i<people.size(); i++) {
-			System.out.println(tasks.get(i).getName());
 			sb.append(people.get(i) + ": " + tasks.get(i).toString(false)+'\n');
 		}
 		
 		return sb.toString();
+	}
+	
+	public void editPerson(String oldP, String newP) {
+		people.set(people.indexOf(oldP), newP);
 	}
 
 }

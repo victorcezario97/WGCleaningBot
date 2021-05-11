@@ -11,7 +11,6 @@ public class Task {
 	public Task(String data) {
 		if(data.contains("(")) {
 			name = data.split("\\(")[0];
-			System.out.println(name);
 			subtasks = new ArrayList<String>(Arrays.asList(data.split("\\(")[1].split("\\)|,")));
 		}
 		else {
